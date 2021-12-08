@@ -4,6 +4,8 @@ In this repository we have three files via Fork of [maxcalavera81/Hassio-Tanix-T
 
 These three files are used to configure Linux for the TV Box Tanix TX3.
 
+We have a copy of ***Armbian_20.10_Arm-64_buster_current_5.9.0.img.xz***.
+
 We also have the file ***hassio_tanix_tx3.sh***, which is a script for installing Home Assistant on TV Box Tanix TX3.
 
 This script is largely based on MadDoct <@MadDoct> / Dale Higgs' <@dale3h> work on [MadDoct/hassio-installer][MadDoct-hassio-installer].
@@ -14,7 +16,6 @@ This script will install Docker, [Agent for Home Assistant OS][os-agent], and th
 ## Requirements
 
 - Tanix TX3 TV BOX
-- ARMBIAN (Debian Stretch)
 
 ## Installation Instructions
 
