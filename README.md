@@ -23,7 +23,7 @@ This script will install Docker, [Agent for Home Assistant OS][os-agent], and th
 2. Run this as root user:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/leofig-rj/Hassio-Tanix-TX3/master/hassio_tanix_tx3.sh | bash -s
+curl -sL https://raw.githubusercontent.com/leofig-rj/Hassio-Tanix-TX3/master/script/hassio_tanix_tx3.sh | bash -s
 ```
 3. When ***Select machine type*** appears, select: ***qemuarm-64***
 
