@@ -1,9 +1,13 @@
 # Home Assistant Supervised Installer for Tanix TX3 box running Armbian
 
-In this repository we have three files via Fork of [maxcalavera81/Hassio-Tanix-TX3][maxcalavera81-Hassio-Tanix-TX3] which are: extlinux.conf, extlinux.conf-menu and meson-sm1-sei610-ethfix.dtb.
+In this repository we have three files via Fork of [maxcalavera81/Hassio-Tanix-TX3][maxcalavera81-Hassio-Tanix-TX3] which are: ***extlinux.conf***, ***extlinux.conf-menu*** and ***meson-sm1-sei610-ethfix.dtb***.
+
 These three files are used to configure Linux for the TV Box Tanix TX3.
-We also have the file hassio_tanix_tx3.sh, which is a script for installing Home Assistant on TV Box Tanix TX3.
+
+We also have the file ***hassio_tanix_tx3.sh***, which is a script for installing Home Assistant on TV Box Tanix TX3.
+
 This script is largely based on MadDoct <@MadDoct> / Dale Higgs' <@dale3h> work.
+
 This script will install Docker, [Agent for Home Assistant OS][os-agent], and then install
 [Home Assistant Supervised][supervised-installer].
 
