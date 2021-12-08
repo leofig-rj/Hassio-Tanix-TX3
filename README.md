@@ -4,14 +4,14 @@ In this repository we have three files via Fork of [maxcalavera81/Hassio-Tanix-T
 
 These three files are used to configure Linux for the TV Box Tanix TX3.
 
-We have a copy of ***Armbian_20.10_Arm-64_buster_current_5.9.0.img.xz***.
-
-We also have the file ***hassio_tanix_tx3.sh***, which is a script for installing Home Assistant on TV Box Tanix TX3.
+I created the file ***hassio_tanix_tx3.sh***, which is a script for installing Home Assistant on TV Box Tanix TX3.
 
 This script is largely based on MadDoct <@MadDoct> / Dale Higgs' <@dale3h> work on [MadDoct/hassio-installer][MadDoct-hassio-installer].
 
 This script will install Docker, [Agent for Home Assistant OS][os-agent], and then install
 [Home Assistant Supervised][supervised-installer].
+
+The entire procedure is based on the image ***Armbian_20.10_Arm-64_buster_current_5.9.0.img.xz*** taken from [armbian storage][armbian-storage].
 
 ## Requirements
 
@@ -19,21 +19,21 @@ This script will install Docker, [Agent for Home Assistant OS][os-agent], and th
 
 ## Installation Instructions
 
-1. Flash the latest ARMBIAN stretch image.
-2. Run this as root user:
-
+1. Download [Armbian_20.10_Arm-64_buster_current_5.9.0.img.xz][armbian-image].
+2. Flash ***Armbian_20.10_Arm-64_buster_current_5.9.0.img.xz*** on a PEN DRIVE of at least 8 GB.
+3. Copy the files from the ***boot*** folder to the root of the PEN DRIVE, obeying the subfolders. The files ***extlinux.conf*** and ***extlinux.conf-menu*** must be overwritten.
+4. At the root of the PEN DRIVE, RENAME the file ***u-boot-s905x2-s922*** to ***u-boot.ext***.
+5. Install the PEN DRIVE on the Tanix TX3 USB 3.0 port and boot, pressing the reset button. Change the initial password from ***1234*** to your convenience and create a new user.
+6. Run this as root user to transfer Amrbian to eMMC:
+```bash
+./install-aml.sh
+```
+7. Reboot (remove the PEN DRIVE).
+8. With Armbian on eMMC, run this as root user:
 ```bash
 curl -sL https://raw.githubusercontent.com/leofig-rj/Hassio-Tanix-TX3/master/script/hassio_tanix_tx3.sh | bash -s
 ```
-3. When ***Select machine type*** appears, select: ***qemuarm-64***
-
-## Known Issues
-
-- **SSH server** add-on (from **Official add-ons**) does not work
-  - ***Fix:** use community SSH add-on instead*
-
-- Port conflict when using SSH add-on
-  - ***Fix:** change the port in the SSH add-on options*
+9. When ***Select machine type*** appears, select: ***qemuarm-64***
 
 ## License
 
@@ -63,3 +63,5 @@ SOFTWARE.
 [supervised-installer]: https://github.com/home-assistant/supervised-installer
 [maxcalavera81-Hassio-Tanix-TX3]: https://github.com/maxcalavera81/Hassio-Tanix-TX3
 [MadDoct-hassio-installer]: https://github.com/MadDoct/hassio-installer
+[armbian-storage]: https://users.armbian.com/balbes150/arm-64
+[armbian-image]: https://users.armbian.com/balbes150/arm-64/Armbian_20.10_Arm-64_buster_current_5.9.0.img.xz
