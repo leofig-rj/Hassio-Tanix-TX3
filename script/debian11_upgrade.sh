@@ -15,9 +15,9 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
-# Installs all required software packages and tools
+# Initial preparations
 # ------------------------------------------------------------------------------
-install_requirements() {
+initial_preparations() {
   echo ""
   echo "Updating APT packages list and upgrading..."
   echo ""
@@ -67,7 +67,7 @@ main() {
   fi
 
   # Install ALL THE THINGS!
-  install_requirements
+  initial_preparations
   config_sources_list
   upgrade_final
 
