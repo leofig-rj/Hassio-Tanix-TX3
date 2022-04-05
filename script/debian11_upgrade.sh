@@ -51,7 +51,7 @@ upgrade_final() {
   echo ""
   sudo apt update
   sudo apt full-upgrade
-  
+  sudo systemctl enable systemd-resolved
 }
 
 # ==============================================================================
