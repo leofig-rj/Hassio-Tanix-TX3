@@ -21,7 +21,7 @@ initial_preparations() {
   echo ""
   echo "Updating APT packages list and upgrading..."
   echo ""
-  sudo apt update
+  apt-get --allow-releaseinfo-change update
   sudo apt upgrade -y
   echo ""
   echo "Ensure all requirements are installed..."
