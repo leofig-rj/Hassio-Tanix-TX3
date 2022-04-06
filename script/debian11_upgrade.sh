@@ -53,8 +53,8 @@ upgrade_final() {
   echo "Upgrade to Debian 11..."
   echo ""
   sudo apt update
-  sudo apt full-upgrade -y
-  sudo systemctl enable systemd-resolved
+  echo "sudo apt full-upgrade -y"
+  echo "sudo systemctl enable systemd-resolved"
 }
 
 # ==============================================================================
