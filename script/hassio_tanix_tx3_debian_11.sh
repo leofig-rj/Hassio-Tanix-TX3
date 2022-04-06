@@ -122,6 +122,9 @@ prepare_upgrade() {
 # Replace Debian 10 Repositories With Debian 11 Ones
 # ------------------------------------------------------------------------------
 config_sources_list() {
+  echo ""
+  echo "Replacing Debian 10 Repositories With Debian 11 Ones..."
+  echo ""
   sudo rm /etc/apt/sources.list
   {
     echo "deb http://deb.debian.org/debian bullseye main contrib non-free";
@@ -139,7 +142,7 @@ upgrade_final() {
   echo "Upgrade to Debian 11..."
   echo ""
   sudo apt update
-  sudo apt full-upgrade
+  sudo apt full-upgrade -y
   sudo systemctl enable systemd-resolved
 }
 
