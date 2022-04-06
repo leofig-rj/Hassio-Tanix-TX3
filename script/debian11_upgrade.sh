@@ -43,18 +43,7 @@ config_sources_list() {
     echo "deb http://security.debian.org/debian-security bullseye-security main";
     echo "deb http://ftp.debian.org/debian bullseye-backports main contrib non-free";
   } >> "/etc/apt/sources.list"
-}
-
-# ------------------------------------------------------------------------------
-# Upgrade final
-# ------------------------------------------------------------------------------
-upgrade_final() {
-  echo ""
-  echo "Upgrade to Debian 11..."
-  echo ""
   sudo apt update
-  echo "sudo apt full-upgrade -y"
-  echo "sudo systemctl enable systemd-resolved"
 }
 
 # ==============================================================================
@@ -69,18 +58,9 @@ main() {
     exit 1
   fi
 
-  # Install ALL THE THINGS!
   initial_preparations
   config_sources_list
-  upgrade_final
 
-  # Friendly closing message
-  echo "======================================================================="
-  echo "Debian 11 installed."
-  echo "Verify the currently installed Debian version by reviewing below:"
-  
-  cat /etc/os-release
-  
   exit 0
 }
 main
