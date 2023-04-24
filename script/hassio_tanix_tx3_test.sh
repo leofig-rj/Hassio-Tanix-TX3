@@ -14,8 +14,8 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # GLOBALS
 # ==============================================================================
 readonly HOSTNAME="armhassio"
-readonly OS_AGENT="os-agent_1.2.2_linux_aarch64.deb"
-readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/download/1.2.2/"
+readonly OS_AGENT="os-agent_1.5.1_linux_aarch64.deb"
+readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/"
 readonly HA_INSTALLER="homeassistant-supervised.deb"
 readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-installer/releases/latest/download/"
 readonly REQUIREMENTS=(
@@ -29,6 +29,11 @@ readonly REQUIREMENTS=(
   network-manager
   socat
   software-properties-common
+  apparmor
+  wget
+  udisks2
+  libglib2.0-bin
+  systemd-journal-remote -y
 )
 
 # ==============================================================================
