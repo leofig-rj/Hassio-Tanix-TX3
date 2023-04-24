@@ -62,9 +62,6 @@ install_requirements() {
   echo ""
   echo "Updating APT packages list..."
   echo ""
-  apt-get --allow-releaseinfo-change update
-  apt-get install software-properties-common
-  apt-get update
   echo ""
   echo "Ensure all requirements are installed..."
   echo ""
