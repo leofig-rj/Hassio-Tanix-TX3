@@ -15,7 +15,7 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # ==============================================================================
 readonly HOSTNAME="armhassio"
 readonly OS_AGENT="os-agent_1.5.1_linux_aarch64.deb"
-readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/"
+readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/tag/1.5.1/"
 readonly HA_INSTALLER="homeassistant-supervised.deb"
 readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-installer/releases/latest/download/"
 readonly REQUIREMENTS=(
