@@ -21,9 +21,6 @@ readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-install
 readonly REQUIREMENTS=(
   apparmor
   udisks2
-  libglib2.0-bin
-  apparmor-utils
-  avahi-daemon
   socat
   apt-transport-https
   ca-certificates
