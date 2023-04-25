@@ -27,6 +27,8 @@ readonly REQUIREMENTS=(
   curl
   dbus
   jq
+  libglib2.0-bin
+  lsb-release
   network-manager
   software-properties-common
   wget
