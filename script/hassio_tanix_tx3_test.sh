@@ -134,7 +134,7 @@ main() {
 
   # Install ALL THE THINGS!
   update_hostname
-  install_requirements
+  echo "install_requirements"
   config_network_manager
   install_docker
   config_hosts
