@@ -19,6 +19,12 @@ readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/down
 readonly HA_INSTALLER="homeassistant-supervised.deb"
 readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-installer/releases/latest/download/"
 readonly REQUIREMENTS=(
+  apparmor
+  udisks2
+  libglib2.0-bin
+  apparmor-utils
+  avahi-daemon
+  socat
   apt-transport-https
   ca-certificates
   curl
