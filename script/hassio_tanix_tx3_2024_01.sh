@@ -63,8 +63,8 @@ update_operating_system() {
     echo ""
     echo "A resolver o alerta de sistema incompatível..."
     echo ""
-#    sed -i 's#Armbian 24.02.0-trunk Bookworm#Debian GNU/Linux 12 (bookworm)#g'  /etc/os-release
-    sed -i 's#Armbian 23.08.0-trunk Bullseye#Debian GNU/Linux 11 (bullseye)#g'  /etc/os-release
+    sed -i 's#Armbian 24.02.0-trunk Bookworm#Debian GNU/Linux 12 (bookworm)#g'  /etc/os-release
+#    sed -i 's#Armbian 23.08.0-trunk Bullseye#Debian GNU/Linux 11 (bullseye)#g'  /etc/os-release
 #    sed -i 's#Armbian 23.02.0-trunk Bullseye#Debian GNU/Linux 11 (bullseye)#g'  /etc/os-release
 #    sed -i 's/Armbian 23.02.0-trunk Bullseye/Debian GNU/Linux 11 (bullseye)/g' etc/os-release
 }
@@ -131,8 +131,9 @@ install_osagents() {
   echo "A instalar os agents..."
   echo ""
 #  wget https://github.com/home-assistant/os-agent/releases/download/1.4.1/os-agent_1.4.1_linux_aarch64.deb
-  wget https://github.com/home-assistant/os-agent/releases/download/1.5.1/os-agent_1.5.1_linux_aarch64.deb
-  sudo dpkg -i os-agent_1.5.1_linux_aarch64.deb
+#  wget https://github.com/home-assistant/os-agent/releases/download/1.5.1/os-agent_1.5.1_linux_aarch64.deb
+  wget https://github.com/home-assistant/os-agent/releases/download/1.6.0/os-agent_1.6.0_linux_aarch64.deb
+  sudo dpkg -i os-agent_1.6.0_linux_aarch64.deb
   gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
   systemctl status haos-agent --no-pager
 
