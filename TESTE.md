@@ -35,7 +35,7 @@ Caso ainda não obtenha sucesso, tente outra imagem do armbian, voltando ao pont
 
 ![putty](https://user-images.githubusercontent.com/43672635/212269473-e8f5bc73-39d8-4352-98cf-fd8240dec856.png)
 
-Quando entrar vai ser solicitado para criar uma nova senha para o usuário root e depois para criar um novo usuário e sua senha, é só seguir os passos. Anotar esses dados (senha do root, novo usuário e senha do novo usuário). São muito importantes.
+Quando entrar vai ser solicitado para criar uma nova senha para o usuário root e depois para criar um novo usuário e sua respectiva senha, é só seguir os passos. Anotar esses dados (senha do root, novo usuário e senha do novo usuário). São muito importantes.
 
 10- Aqui vamos criar a nova senha senha do usuário root
 
