@@ -41,7 +41,7 @@ Quando entrar vai ser solicitado para criar uma nova senha para o usuário root 
 
 ![criar pass](https://user-images.githubusercontent.com/43672635/212269776-ed27a55b-6676-4eca-a8e3-6418d0ad7947.jpeg)
 
-11- agora vamos escolher a opção 1 (bash).
+11- Agora vamos escolher a opção 1 (bash).
 
 ![opcao1](https://user-images.githubusercontent.com/43672635/212270022-2681da32-4073-4102-85f8-3daa138bbdd9.jpeg)
 
