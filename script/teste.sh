@@ -91,7 +91,6 @@ install_dependences() {
   echo ""
   
   apt install \
-  apparmor \
   jq \
   wget \
   curl \
