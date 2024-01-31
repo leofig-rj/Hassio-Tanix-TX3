@@ -22,12 +22,12 @@ O importante é que comecem com Armbian_24.2.0_amlogic_s905x3_bullseye.
 
 5 – Ejetar a PEN do computador e colocar na porta UBS 3.0 na lateral esquerda da TANIX.
 
-6 – Ligar a TANIX ao cabo HDMI e Cabo de Rede. Atenção que a TANIX ainda deve estar desligada da eletricidade.
+6 – Ligar o cabo HDMI e cabo de Rede na TANIX. Atenção que a TANIX ainda deve estar desligada da eletricidade.
 
 7 – Com uma agulha acionar o botão de reset atrás da TANIX até sentir o clique então ligar a box á energia.
 
-8 – Quando aparecer o símbolo ```TX3``` no monitor/televisão, largar o botão de reset. Esperar o carregamento do armbian na sua box e no final deve aparecer um ip atribuído.
-Algumas vezes não aparece o símbolo ```TX3``` e começa a aparecer a sequência de carregamento.
+8 – Quando aparecer o símbolo ```TX3``` no monitor/televisão, largar o botão de reset. Esperar o carregamento do armbian na sua box, no final deve aparecer um ip atribuído.
+Algumas vezes não aparece o símbolo ```TX3``` e começa a aparecer a sequência de carregamento, não tem problema.
 Se não for atribuído um IP, retire e reinsira o cabo de rede sem desligar a tv box. Se mesmo assim não conseguir obter o IP, tente outro dbt editando uEnv.txt voltando ao ponto 4.
 Caso ainda não obtenha sucesso, tente outra imagem do armbian, voltando ao ponto 2.
 
