@@ -91,7 +91,7 @@ install_dependences() {
   network-manager \
   dbus \
   lsb-release \
-  systemd-journal-remote -y
+  systemd-journal-remote -y \
   smbclient -y
 #  systemd-resolved -y
 }
