@@ -94,6 +94,7 @@ install_dependences() {
   jq \
   wget \
   curl \
+  udisks2 -y \
   libglib2.0-bin \
   network-manager \
   dbus \
