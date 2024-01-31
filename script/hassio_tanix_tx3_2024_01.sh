@@ -104,7 +104,6 @@ install_docker() {
   echo "Instalando Docker..."
   echo ""
   
-#  curl -fsSL https://get.docker.com | sh
   curl -fsSL get.docker.com | sh
 }
 
