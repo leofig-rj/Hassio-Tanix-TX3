@@ -74,18 +74,6 @@ update_operating_system() {
 }
 
 # ------------------------------------------------------------------------------
-# Installs armbian software
-# ------------------------------------------------------------------------------
-install_armbian-software() {
-  echo ""
-  echo "Instalando Armbian Software..."
-  echo ""
-  
-  armbian-software || :
-}
-
-
-# ------------------------------------------------------------------------------
 # Installs dependences
 # ------------------------------------------------------------------------------
 install_dependences() {
@@ -176,7 +164,6 @@ main() {
   update_hostname
   update_armbian
   repair_apparmor_and_cgroups
-  install_armbian-software
   update_operating_system
   install_dependences
   install_docker
