@@ -16,7 +16,7 @@ O importante é que comecem com Armbian_24.2.0_amlogic_s905x3_bullseye.
 
 3 – Com um PENDRIVE formatado (é bom formatar com https://www.sdcard.org/downloads/formatter/) vamos gravar a imagem do Armbian com o BalenaEtcher no PENDRIVE.
 
-4 – Quando concluído, abrir uEnv.txt que esta na raiz da PENDRIVE e substituir o dtb que lá está por um referente a sua TX3.
+4 – Quando concluído, abrir uEnv.txt que esta na raiz da PENDRIVE e substituir o dtb que lá está por um referente a sua TX3 (meson-sm1-tx3-bz.dtb ou meson-sm1-tx3-qz.dtb).
 
 ![dtb](https://user-images.githubusercontent.com/43672635/212435135-13837ce5-d9b9-43b4-b276-49943e5dc334.png)
 
