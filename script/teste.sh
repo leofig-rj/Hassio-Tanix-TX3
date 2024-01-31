@@ -15,8 +15,8 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # ==============================================================================
 readonly HOSTNAME="homeassistant"
 readonly OS_VERSION="'s#Armbian 24.02.0-trunk Bullseye#Debian GNU/Linux 12 (bullseye)#g'"
-readonly OS_AGENT="os-agent_1.5.1_linux_aarch64.deb"
-readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/download/1.5.1/"
+readonly OS_AGENT="os-agent_1.6.0_linux_aarch64.deb"
+readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/download/1.6.0/"
 readonly HA_INSTALLER="homeassistant-supervised.deb"
 readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-installer/releases/latest/download/"
 
@@ -165,14 +165,14 @@ main() {
   fi
 
   # Install ALL THE THINGS!
-  #update_hostname
+  update_hostname
   update_armbian
-  #repair_apparmor_and_cgroups
+  repair_apparmor_and_cgroups
   #update_operating_system
-  #install_dependences
-  #install_docker
-  #install_osagents
-  #install_hassio
+  install_dependences
+  install_docker
+  install_osagents
+  install_hassio
 
   # Friendly closing message
   ip_addr=$(hostname -I | cut -d ' ' -f1)
