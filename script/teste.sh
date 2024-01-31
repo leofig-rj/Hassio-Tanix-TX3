@@ -14,6 +14,11 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # GLOBALS
 # ==============================================================================
 readonly HOSTNAME="homeassistant"
+readonly OS_VERSION="'s#Armbian 24.02.0-trunk Bullseye#Debian GNU/Linux 12 (bullseye)#g'"
+readonly OS_AGENT="os-agent_1.5.1_linux_aarch64.deb"
+readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/download/1.5.1/"
+readonly HA_INSTALLER="homeassistant-supervised.deb"
+readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-installer/releases/latest/download/"
 
 # ==============================================================================
 # SCRIPT LOGIC
@@ -67,10 +72,10 @@ update_operating_system() {
     echo "Resolvendo o alerta de sistema incompatível..."
     echo ""
     
-    sed -i 's#Armbian 24.02.0-trunk Bullseye#Debian GNU/Linux 12 (bullseye)#g'  /etc/os-release
-#    sed -i 's#Armbian 23.08.0-trunk Bullseye#Debian GNU/Linux 11 (bullseye)#g'  /etc/os-release
-#    sed -i 's#Armbian 23.02.0-trunk Bullseye#Debian GNU/Linux 11 (bullseye)#g'  /etc/os-release
-#    sed -i 's/Armbian 23.02.0-trunk Bullseye/Debian GNU/Linux 11 (bullseye)/g' etc/os-release
+#    sed -i 's#Armbian 24.02.0-trunk Bullseye#Debian GNU/Linux 12 (bullseye)#g'  /etc/os-release
+    
+    sed -i "${OS_VERSION}"  /etc/os-release
+    
 }
 
 # ------------------------------------------------------------------------------
@@ -104,7 +109,6 @@ install_docker() {
   echo "Instalando Docker..."
   echo ""
   
-#  curl -fsSL https://get.docker.com | sh
   curl -fsSL get.docker.com | sh
 }
 
@@ -116,17 +120,15 @@ install_osagents() {
   echo "Instalando os agentes de instalação do Homeassistant..."
   echo ""
   
-#  wget https://github.com/home-assistant/os-agent/releases/download/1.4.1/os-agent_1.4.1_linux_aarch64.deb
-  wget https://github.com/home-assistant/os-agent/releases/download/1.5.1/os-agent_1.5.1_linux_aarch64.deb
-  sudo dpkg -i os-agent_1.5.1_linux_aarch64.deb
 #  wget https://github.com/home-assistant/os-agent/releases/download/1.6.0/os-agent_1.6.0_linux_aarch64.deb
 #  sudo dpkg -i os-agent_1.6.0_linux_aarch64.deb
+
+  wget "${OS_AGENT_PATH}${OS_AGENT}"
+  dpkg -i "${OS_AGENT}"
+  
   gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
   systemctl status haos-agent --no-pager
 
-#  wget https://github.com/home-assistant/os-agent/releases/download/1.4.1/os-agent_1.4.1_linux_aarch64.deb
-#  sudo dpkg -i os-agent_1.4.1_linux_aarch64.deb
-#  gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
 }
 
 # ------------------------------------------------------------------------------
@@ -137,14 +139,12 @@ install_hassio() {
   echo "Instalando o Home Assistant..."
   echo ""
   
-#  apt-get update
-#  apt-get install udisks2 wget -y
-#  wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-#  sudo dpkg -i homeassistant-supervised.deb
-
   apt-get update
-  wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-  sudo dpkg -i --ignore-depends=systemd-resolved homeassistant-supervised.deb
+#  wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+#  sudo dpkg -i --ignore-depends=systemd-resolved homeassistant-supervised.deb
+  
+  wget "${HA_INSTALLER_PATH}${HA_INSTALLER}"
+  dpkg -i --ignore-depends=systemd-resolved "${HA_INSTALLER}"
 
 }
 
