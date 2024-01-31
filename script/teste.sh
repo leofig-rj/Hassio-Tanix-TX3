@@ -91,7 +91,6 @@ install_dependences() {
   echo ""
   
   apt install \
-  apparmor -y \
   jq \
   wget \
   curl \
@@ -100,6 +99,7 @@ install_dependences() {
   network-manager \
   dbus \
   lsb-release \
+  apparmor -y \
   systemd-journal-remote -y \
   smbclient -y
 #  systemd-resolved -y
