@@ -77,7 +77,7 @@ update_operating_system() {
     echo ""
     
     # Atualizo somente na primeira linha -> 1s
-    sed -i "1s/${OS_VERSION_FROM}/${OS_VERSION_TO}" /etc/os-release
+    sed -i "1s/${OS_VERSION_FROM}/${OS_VERSION_TO}/g" /etc/os-release
     
 }
 
