@@ -2,7 +2,7 @@
 
 Este tutorial é baseado em [Instalacao_armbian_hassio_TX3][Instalacao_armbian_hassio_TX3] e foi escrito em 31/01/2024
 
-Apesar deste tutorial ter sido testado, pode ser encontradas adversidades que não podem ser simuladas devido ã diversidade de hardware existente e a disponibilidade de software disponível no momento da utilização.
+Apesar deste tutorial ter sido testado, pode ser encontradas adversidades que não podem ser simuladas devido à diversidade de hardware existente e à disponibilidade de software disponível no momento da utilização.
 
 Desse modo, não darei nenhum tipo de suporte a este tutorial, ficando o mesmo ainda disponível para quem quiser por sua conta e risco usar.
 
