@@ -90,6 +90,8 @@ install_dependences() {
   echo "Instalando dependencias..."
   echo ""
   
+  apt-get update
+  
   apt install \
   jq \
   wget \
