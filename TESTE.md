@@ -18,8 +18,6 @@ O importante é que comecem com Armbian_24.2.0_amlogic_s905x3_bullseye.
 
 4 – Quando concluído, abrir uEnv.txt que esta na raiz da PENDRIVE e substituir o dtb que lá está por um referente a sua TX3 (meson-sm1-tx3-bz.dtb ou meson-sm1-tx3-qz.dtb).
 
-![dtb](https://user-images.githubusercontent.com/43672635/212435135-13837ce5-d9b9-43b4-b276-49943e5dc334.png)
-
 ![uenv](https://user-images.githubusercontent.com/43672635/212434955-3c84c7e5-49ce-41e8-b596-eefc1b564e4a.png)
 
 5 – Ejetar a PEN do computador e colocar na porta UBS 3.0 na lateral esquerda da TANIX.
