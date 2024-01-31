@@ -76,9 +76,8 @@ update_operating_system() {
     echo "Resolvendo o alerta de sistema incompatível..."
     echo ""
     
-#    sed -i 's#Armbian 24.02.0-trunk Bullseye#Debian GNU/Linux 12 (bullseye)#g'  /etc/os-release
-    
-    sed -i "s/${OS_VERSION_FROM}/${OS_VERSION_FROM}/g" /etc/os-release
+    # Atualizo somente na primeira linha -> 1s
+    sed -i "1s/${OS_VERSION_FROM}/${OS_VERSION_TO}" /etc/os-release
     
 }
 
