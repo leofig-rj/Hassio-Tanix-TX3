@@ -104,6 +104,7 @@ install_dependences() {
   dbus \
   lsb-release \
   systemd-journal-remote -y
+  smbclient -y
 #  systemd-resolved -y
 }
 
@@ -154,7 +155,6 @@ install_hassio() {
 #  sudo dpkg -i homeassistant-supervised.deb
 
   apt-get update
-  apt-get install udisks2 wget -y
   wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
   sudo dpkg -i --ignore-depends=systemd-resolved homeassistant-supervised.deb
 
