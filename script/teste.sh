@@ -28,14 +28,17 @@ readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-install
 # Ensures the hostname of the Pi is correct.
 # ------------------------------------------------------------------------------
 update_hostname() {
-    hostname
-    sudo hostname homeassistant
+
+  old_hostname=$(< /etc/hostname)
+  if [[ "${old_hostname}" != "${HOSTNAME}" ]]; then
+    sed -i "s/${old_hostname}/${HOSTNAME}/g" /etc/hostname
+    sed -i "s/${old_hostname}/${HOSTNAME}/g" /etc/hosts
     hostname "${HOSTNAME}"
-    
     echo ""
     echo "O nome do host será alterado na próxima reinicialização para: ${HOSTNAME}"
     echo ""
-
+  fi
+    
 }
 
 # ------------------------------------------------------------------------------
@@ -74,7 +77,8 @@ update_operating_system() {
     
 #    sed -i 's#Armbian 24.02.0-trunk Bullseye#Debian GNU/Linux 12 (bullseye)#g'  /etc/os-release
     
-    sed -i "${OS_VERSION}"  /etc/os-release
+    sed -i "s#${OS_VERSION}#g" /etc/os-release
+#    sed -i "s/${old_hostname}/${HOSTNAME}/g" /etc/hostname
     
 }
 
