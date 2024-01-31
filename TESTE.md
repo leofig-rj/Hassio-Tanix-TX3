@@ -55,26 +55,24 @@ Quando entrar vai ser solicitado para criar uma nova senha para o usuário root 
 
 14 - Após a definição da liguagem já estamos prontos para instalar o armbian na memória eMMC da TV box dando o seguinte comando: ```armbian-install -m yes -a no```
 
-15 - Vai aparecer uma lista de dtb´s ao qual deveremos escolher o mesmo escolhido no ponto 4, que poderá ser o 518, 520. Note que este número pode mudar conforme a imagem do armbian utilizada, o importante é que se refira ao dtb definido anteriormente (meson-sm1-tx3-bz.dtb ou meson-sm1-tx3-qz.dtb).
-
-![dtb](https://user-images.githubusercontent.com/43672635/212334717-b3a50641-f55c-4f01-b631-e1b2b3f32d07.jpeg)
+15 - Vai aparecer uma lista de dtb´s e deveremos escolher o mesmo dtb definido no ponto 4, que poderá ser o 518, 520. Note que este número pode mudar conforme a imagem do armbian utilizada, o importante é que se refira ao dtb definido anteriormente (meson-sm1-tx3-bz.dtb ou meson-sm1-tx3-qz.dtb).
 
 16 - Então aparece para escolher o tipo de formatação a ser utilizado na memória eMMC. Escolher 1 (ext4).
 
-17 - Finalmente após alguma espera (nunca interrompam o processo) vamos ter esta msg no final. Então digite poweroff para finalizar a seção do armbian e desligar a TV box.
+17 - Finalmente após alguma espera (nunca interrompa o processo) vamos ter uma msg no final. Então digite poweroff para finalizar a seção do armbian e desligar a TV box.
 
-18 - Agora desligar a energia, retirar o PENDRIVE e voltar a ligar.
+18 - Agora devemos desligar a energia, retirar o PENDRIVE e voltar a ligar a energia.
 
 19 - Vamos acessar novamente o armbian com o usuário root e a nova senha definida para o root (como em 9, agora com a nova senha).
-Então vamos executar um comando para fazer as atualizações e ajustes do armbian e a instalação do Home Assistant supervisor (possivelmente o armbian poderá ser reinializado, necessitanto fazer um novo acesso e repetir o comando).
+E vamos executar um comando para fazer as atualizações e ajustes do armbian e a instalação do Home Assistant supervisor (possivelmente o armbian poderá ser reinializado, necessitanto fazer um novo acesso e repetir o comando).
 Devemos copiar e colar este comando ```curl -sL https://raw.githubusercontent.com/maxcalavera81/Instalacao_armbian_hassio_TX3/main/instalacao_homeassistant.sh | bash -s```
 Depois de tudo bem sucedido vai aparecer a seguinte caixa e selecionamos ```qemuarm-64``` com a seta para baixo e damos enter.
 
 ![osagents](https://user-images.githubusercontent.com/43672635/212336624-b7161dfe-b0d1-4440-a8aa-589c95bd3abb.jpeg)
 
-20 - Então será instalado o home assistant com o supervisor. Se tudo correr bem, vamos receber a informação de conclusão.
+20 - Será instalado o home assistant com o supervisor. E se tudo correr bem, vamos receber a informação de conclusão.
 
-21 - Vamos no nosso browser acessar http://ip_da_box:8123 e aguardar a instalação. Quando aparecer a tela para criar novo login ou restaurar backup, devemos fazer um reboot para que as alterações seja aplicadas, comandando ```sudo reboot```.
+21 - Vamos no nosso browser, acessar http://ip_da_box:8123 e aguardar a instalação. Quando aparecer a tela para criar novo login ou restaurar backup, devemos fazer um reboot para que as alterações seja aplicadas, comandando ```sudo reboot```.
 
 Se quisermos usar o bluetooth ou o wifi da box temos que acessar novamente o armbian como usuário root e dar o comando ```sudo armbian-config``` e vai abrir uma caixa de opções.
 
