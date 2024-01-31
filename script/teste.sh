@@ -165,7 +165,7 @@ main() {
   update_armbian
   repair_apparmor_and_cgroups
   #update_operating_system
-  install_dependences
+  #install_dependences
   install_docker
   install_osagents
   install_hassio
