@@ -91,6 +91,7 @@ install_dependences() {
   echo ""
   
   apt install \
+  apparmor -y \
   jq \
   wget \
   curl \
@@ -98,7 +99,9 @@ install_dependences() {
   libglib2.0-bin \
   network-manager \
   dbus \
-  lsb-release
+  lsb-release \
+  systemd-journal-remote -y \
+  smbclient -y
 #  systemd-resolved -y
 }
 
