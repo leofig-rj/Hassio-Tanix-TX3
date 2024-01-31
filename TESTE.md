@@ -45,11 +45,11 @@ Quando entrar vai ser solicitado para criar uma nova senha para o usuário root 
 
 ![opcao1](https://user-images.githubusercontent.com/43672635/212270022-2681da32-4073-4102-85f8-3daa138bbdd9.jpeg)
 
-12- Aqui vamos escolher o novo usuário, em seguida será solicitada a senha e a confirmação e então solicitar o nome real do usuário (basta dar Enter).
+12- Aqui vamos definir o novo usuário, em seguida será solicitada a senha e a confirmação e então será solicitado o nome real do usuário (basta dar Enter).
 
 ![user name](https://user-images.githubusercontent.com/43672635/212333440-deb4cfc2-1f09-4f76-ae35-2d5c272f1a41.jpeg)
 
-13 - Então será solicitado a definição da linguagem, baseada na timezone detectada. Basta dar Enter...
+13 - Agora será solicitado a definição da linguagem, baseada na timezone detectada. Basta dar Enter...
 
 ![enter](https://user-images.githubusercontent.com/43672635/212333795-0eef3850-bc21-4ff2-8772-10e93a15e41e.jpeg)
 
