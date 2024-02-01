@@ -68,7 +68,7 @@ E executar um comando para fazer as atualizações e ajustes do armbian, bem com
 
 Devemos copiar e colar este comando:
 
-```curl -sL https://raw.githubusercontent.com/leofig-rj/Hassio-Tanix-TX3/blob/main/script/hassio_tanix_tx3_2024_01.sh | bash -s```
+```curl -sL https://raw.githubusercontent.com/leofig-rj/Hassio-Tanix-TX3/master/script/hassio_tanix_tx3_2024_01.sh | bash -s ```
 
 Estando tudo OK, vai aparecer a tela abaixo. Devemos selecionar ```qemuarm-64``` (movimentar com a seta para baixo e dar enter).
 
