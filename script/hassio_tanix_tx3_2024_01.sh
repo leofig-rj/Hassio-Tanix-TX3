@@ -14,6 +14,12 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # GLOBALS
 # ==============================================================================
 readonly HOSTNAME="homeassistant"
+readonly OS_VERSION_FROM="Armbian-unofficial 24.2.0-trunk bookworm"
+readonly OS_VERSION_TO="Debian GNU\/Linux 12 (bookworm)"
+readonly OS_AGENT="os-agent_1.6.0_linux_aarch64.deb"
+readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/download/1.6.0/"
+readonly HA_INSTALLER="homeassistant-supervised.deb"
+readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-installer/releases/latest/download/"
 
 # ==============================================================================
 # SCRIPT LOGIC
@@ -23,14 +29,17 @@ readonly HOSTNAME="homeassistant"
 # Ensures the hostname of the Pi is correct.
 # ------------------------------------------------------------------------------
 update_hostname() {
-    hostname
-    sudo hostname homeassistant
+
+  old_hostname=$(< /etc/hostname)
+  if [[ "${old_hostname}" != "${HOSTNAME}" ]]; then
+    sed -i "s/${old_hostname}/${HOSTNAME}/g" /etc/hostname
+    sed -i "s/${old_hostname}/${HOSTNAME}/g" /etc/hosts
     hostname "${HOSTNAME}"
-    
     echo ""
     echo "O nome do host será alterado na próxima reinicialização para: ${HOSTNAME}"
     echo ""
-
+  fi
+    
 }
 
 # ------------------------------------------------------------------------------
@@ -67,10 +76,9 @@ update_operating_system() {
     echo "Resolvendo o alerta de sistema incompatível..."
     echo ""
     
-    sed -i 's#Armbian 24.02.0-trunk Bullseye#Debian GNU/Linux 12 (bullseye)#g'  /etc/os-release
-#    sed -i 's#Armbian 23.08.0-trunk Bullseye#Debian GNU/Linux 11 (bullseye)#g'  /etc/os-release
-#    sed -i 's#Armbian 23.02.0-trunk Bullseye#Debian GNU/Linux 11 (bullseye)#g'  /etc/os-release
-#    sed -i 's/Armbian 23.02.0-trunk Bullseye/Debian GNU/Linux 11 (bullseye)/g' etc/os-release
+    # Atualizo somente na primeira linha -> 1s
+    sed -i "1s/${OS_VERSION_FROM}/${OS_VERSION_TO}/g" /etc/os-release
+    
 }
 
 # ------------------------------------------------------------------------------
@@ -81,16 +89,18 @@ install_dependences() {
   echo "Instalando dependencias..."
   echo ""
   
+  apt-get update
+  
   apt install \
-  apparmor \
   jq \
   wget \
   curl \
-  udisks2 \
+  udisks2 -y \
   libglib2.0-bin \
   network-manager \
   dbus \
   lsb-release \
+  apparmor -y \
   systemd-journal-remote -y \
   smbclient -y
 #  systemd-resolved -y
@@ -115,17 +125,15 @@ install_osagents() {
   echo "Instalando os agentes de instalação do Homeassistant..."
   echo ""
   
-#  wget https://github.com/home-assistant/os-agent/releases/download/1.4.1/os-agent_1.4.1_linux_aarch64.deb
-  wget https://github.com/home-assistant/os-agent/releases/download/1.5.1/os-agent_1.5.1_linux_aarch64.deb
-  sudo dpkg -i os-agent_1.5.1_linux_aarch64.deb
 #  wget https://github.com/home-assistant/os-agent/releases/download/1.6.0/os-agent_1.6.0_linux_aarch64.deb
 #  sudo dpkg -i os-agent_1.6.0_linux_aarch64.deb
+
+  wget "${OS_AGENT_PATH}${OS_AGENT}"
+  dpkg -i "${OS_AGENT}"
+  
   gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
   systemctl status haos-agent --no-pager
 
-#  wget https://github.com/home-assistant/os-agent/releases/download/1.4.1/os-agent_1.4.1_linux_aarch64.deb
-#  sudo dpkg -i os-agent_1.4.1_linux_aarch64.deb
-#  gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
 }
 
 # ------------------------------------------------------------------------------
@@ -136,14 +144,10 @@ install_hassio() {
   echo "Instalando o Home Assistant..."
   echo ""
   
-#  apt-get update
-#  apt-get install udisks2 wget -y
-#  wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-#  sudo dpkg -i homeassistant-supervised.deb
-
   apt-get update
-  wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-  sudo dpkg -i --ignore-depends=systemd-resolved homeassistant-supervised.deb
+  
+  wget "${HA_INSTALLER_PATH}${HA_INSTALLER}"
+  dpkg -i --ignore-depends=systemd-resolved "${HA_INSTALLER}"
 
 }
 
