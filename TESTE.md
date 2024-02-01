@@ -2,13 +2,13 @@
 
 Este tutorial é baseado em [Instalacao_armbian_hassio_TX3][Instalacao_armbian_hassio_TX3] e foi escrito em 31/01/2024
 
-Apesar deste tutorial ter sido testado, pode ser encontradas adversidades que não podem ser simuladas devido à diversidade de hardware existente e à disponibilidade de software disponível no momento da utilização.
+Apesar deste tutorial ter sido testado, podem ser encontradas adversidades que não foram simuladas devido à grande variedade de hardware existente e à alteração de software disponível.
 
 Desse modo, não darei nenhum tipo de suporte a este tutorial, ficando o mesmo ainda disponível para quem quiser por sua conta e risco usar.
 
 1 – Começamos fazendo download do Balena Etcher - https://www.balena.io/etcher/.
 
-2 – Depois fazendo download do ArmBian em https://github.com/ophub/amlogic-s9xxx-armbian/releases
+2 – Depois fazendo download do ArmBian de https://github.com/ophub/amlogic-s9xxx-armbian/releases
 
 Eu usei uma versão de Armbian_bullseye_xxxxxx por ser baseada em debian e estar atualizada com a última versão.
 A imagem que usei foi Armbian_24.2.0_amlogic_s905x3_bullseye_6.6.13_server_2024.01.25.img.gz, mas caso não esteja mais disponível ou se não funcionar para você, teste versões Armbian_24.2.0_amlogic_s905x3_bullseye_xxxxxxxxx.img.gz.
@@ -16,17 +16,17 @@ O importante é que comecem com Armbian_24.2.0_amlogic_s905x3_bullseye.
 
 3 – Com um PENDRIVE formatado (é bom formatar com https://www.sdcard.org/downloads/formatter/) vamos gravar a imagem do Armbian com o BalenaEtcher no PENDRIVE.
 
-4 – Quando concluído, abrir uEnv.txt que esta na raiz da PENDRIVE e substituir o dtb que lá está por um referente a sua TX3 (meson-sm1-tx3-bz.dtb ou meson-sm1-tx3-qz.dtb).
+4 – Quando concluído, devemos ejetar o PENDRIVE, reinstalar no computador e abrir uEnv.txt que esta na raiz do PENDRIVE. Devemos substituir o dtb que lá está por um referente a sua TX3 (meson-sm1-tx3-bz.dtb ou meson-sm1-tx3-qz.dtb).
 
 ![uenv](https://user-images.githubusercontent.com/43672635/212434955-3c84c7e5-49ce-41e8-b596-eefc1b564e4a.png)
 
-5 – Ejetar a PEN do computador e colocar na porta UBS 3.0 na lateral esquerda da TANIX.
+5 – Ejetar o PENDRIVE do computador e colocar na porta UBS 3.0 na lateral esquerda da TANIX.
 
 6 – Ligar o cabo HDMI e cabo de Rede na TANIX. Atenção que a TANIX ainda deve estar desligada da eletricidade.
 
-7 – Com uma agulha acionar o botão de reset atrás da TANIX até sentir o clique então ligar a box á energia.
+7 – Com uma agulha acionar o botão de reset atrás da TANIX até sentir o clique, então ligar a box à energia.
 
-8 – Quando aparecer o símbolo ```TX3``` no monitor/televisão, largar o botão de reset. Esperar o carregamento do armbian na sua box, no final deve aparecer um ip atribuído.
+8 – Quando aparecer o símbolo ```TX3``` no monitor/televisão, largar o botão de reset. Esperar o carregamento do armbian na sua TV box, no final deve aparecer um ip atribuído.
 Algumas vezes não aparece o símbolo ```TX3``` e começa a aparecer a sequência de carregamento, não tem problema.
 Se não for atribuído um IP, retire e reinsira o cabo de rede sem desligar a tv box. Se mesmo assim não conseguir obter o IP, tente outro dbt editando uEnv.txt voltando ao ponto 4.
 Caso ainda não obtenha sucesso, tente outra imagem do armbian, voltando ao ponto 2.
@@ -59,26 +59,26 @@ Quando entrar vai ser solicitado para criar uma nova senha para o usuário root 
 
 16 - Então aparece para escolher o tipo de formatação a ser utilizado na memória eMMC. Escolher 1 (ext4).
 
-17 - Finalmente após alguma espera (nunca interrompa o processo) vamos ter uma msg no final. Então digite poweroff para finalizar a seção do armbian e desligar a TV box.
+17 - Finalmente após alguma espera (nunca interrompa o processo) vamos ter uma msg no final. Então digite ```poweroff``` para finalizar a seção do armbian e desligar a TV box.
 
 18 - Agora devemos desligar a energia, retirar o PENDRIVE e voltar a ligar a energia.
 
 19 - Vamos acessar novamente o armbian com o usuário root e a nova senha definida para o root (como em 9, agora com a nova senha).
-E vamos executar um comando para fazer as atualizações e ajustes do armbian e a instalação do Home Assistant supervisor (possivelmente o armbian poderá ser reinializado, necessitanto fazer um novo acesso e repetir o comando).
+E executar um comando para fazer as atualizações e ajustes do armbian e a instalação do Home Assistant supervisor (possivelmente o armbian poderá ser reinializado, necessitanto fazer um novo acesso e repetir o comando).
 Devemos copiar e colar este comando ```curl -sL https://raw.githubusercontent.com/maxcalavera81/Instalacao_armbian_hassio_TX3/main/instalacao_homeassistant.sh | bash -s```
-Depois de tudo bem sucedido vai aparecer a seguinte caixa e selecionamos ```qemuarm-64``` com a seta para baixo e damos enter.
+Depois de tudo bem sucedido vai aparecer a seguinte caixa. Devemos selecionar ```qemuarm-64``` (movimentar com a seta para baixo e dar enter).
 
 ![osagents](https://user-images.githubusercontent.com/43672635/212336624-b7161dfe-b0d1-4440-a8aa-589c95bd3abb.jpeg)
 
 20 - Será instalado o home assistant com o supervisor. E se tudo correr bem, vamos receber a informação de conclusão.
 
-21 - Vamos no nosso browser, acessar http://ip_da_box:8123 e aguardar a instalação. Quando aparecer a tela para criar novo login ou restaurar backup, devemos fazer um reboot para que as alterações seja aplicadas, comandando ```sudo reboot```.
+21 - Vamos no nosso browser, acessar http://ip_da_box:8123 e aguardar a instalação. Quando aparecer a tela para criar novo login ou restaurar backup, devemos fazer um reboot para que as alterações seja aplicadas, comandando ```sudo reboot``` na linha de comando.
 
-Se quisermos usar o bluetooth ou o wifi da box temos que acessar novamente o armbian como usuário root e dar o comando ```sudo armbian-config``` e vai abrir uma caixa de opções.
+Se quisermos usar o bluetooth ou o wifi da box temos que acessar novamente o armbian como usuário root e dar o comando ```sudo armbian-config``` que vai abrir uma caixa de opções.
 
 ![network](https://user-images.githubusercontent.com/43672635/212344741-788c48c3-e7e4-4fce-b1b4-25d86ddac8f3.png)
 
-Escolhemos a opção ```network``` e depois vamos escolher a opção ```bt install``` e aguardam a instalação.
+Escolhemos a opção ```network``` e depois vamos escolher a opção ```bt install``` e aguardar a instalação.
 
 ![bt install](https://user-images.githubusercontent.com/43672635/212345004-a5651ad2-c35e-4fa4-81f5-170757be65f1.png)
 
