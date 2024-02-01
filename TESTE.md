@@ -65,8 +65,9 @@ Quando entrar vai ser solicitado para criar uma nova senha para o usuário root 
 
 19 - Vamos acessar novamente o armbian com o usuário root e a nova senha definida para o root (como em 9, agora com a nova senha).
 E executar um comando para fazer as atualizações e ajustes do armbian e a instalação do Home Assistant supervisor (possivelmente o armbian poderá ser reinializado, necessitanto fazer um novo acesso e repetir o comando).
-Devemos copiar e colar este comando ```curl -sL https://raw.githubusercontent.com/maxcalavera81/Instalacao_armbian_hassio_TX3/main/instalacao_homeassistant.sh | bash -s```
-Depois de tudo bem sucedido vai aparecer a seguinte caixa. Devemos selecionar ```qemuarm-64``` (movimentar com a seta para baixo e dar enter).
+Devemos copiar e colar este comando ```curl -sL https://raw.githubusercontent.com/maxcalavera81/Instalacao_armbian_hassio_TX3/main/instalacao_homeassistant.sh | bash -s```.
+
+Estando tudo OK, vai aparecer a tela abaixo. Devemos selecionar ```qemuarm-64``` (movimentar com a seta para baixo e dar enter).
 
 ![osagents](https://user-images.githubusercontent.com/43672635/212336624-b7161dfe-b0d1-4440-a8aa-589c95bd3abb.jpeg)
 
