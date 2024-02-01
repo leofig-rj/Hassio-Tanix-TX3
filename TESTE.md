@@ -64,7 +64,7 @@ Quando entrar vai ser solicitado para criar uma nova senha para o usuário root 
 18 - Agora devemos desligar a energia, retirar o PENDRIVE e voltar a ligar a energia.
 
 19 - Vamos acessar novamente o armbian com o usuário root e a nova senha definida para o root (como em 9, agora com a nova senha).
-E executar um comando para fazer as atualizações e ajustes do armbian e a instalação do Home Assistant supervisor (possivelmente o armbian poderá ser reinializado, necessitanto fazer um novo acesso e repetir o comando).
+E executar um comando para fazer as atualizações e ajustes do armbian, bem como a instalação do Home Assistant supervisor (possivelmente o armbian poderá ser reinializado, necessitanto fazer um novo acesso e repetir o comando).
 
 Devemos copiar e colar este comando:
 
