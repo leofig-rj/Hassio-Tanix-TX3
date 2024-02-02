@@ -102,6 +102,7 @@ install_dependences() {
   lsb-release \
   apparmor -y \
   systemd-journal-remote -y \
+  cifs-utils -y \
   smbclient -y
 #  systemd-resolved -y
 }
