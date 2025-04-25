@@ -14,7 +14,7 @@ set -o pipefail # Return exit status of the last command in the pipe that failed
 # GLOBALS
 # ==============================================================================
 readonly HOSTNAME="homeassistant"
-readonly OS_VERSION_FROM="Armbian-unofficial 25.05.0-trunk bookworm"
+readonly OS_VERSION_FROM="Armbian 24.2.1 bookworm"
 readonly OS_VERSION_TO="Debian GNU\/Linux 12 (bookworm)"
 readonly OS_AGENT="os-agent_1.6.0_linux_aarch64.deb"
 readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/download/1.6.0/"
