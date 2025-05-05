@@ -103,7 +103,8 @@ install_dependences() {
   apparmor -y \
   systemd-journal-remote -y \
   cifs-utils -y \
-  smbclient -y
+  smbclient -y \
+  systemd-timesyncd
 #  systemd-resolved -y
 }
 
