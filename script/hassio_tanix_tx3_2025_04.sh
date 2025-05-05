@@ -97,7 +97,6 @@ install_dependences() {
   curl \
   udisks2 -y \
   libglib2.0-bin \
-  network-manager \
   dbus \
   lsb-release \
   apparmor -y \
@@ -105,7 +104,9 @@ install_dependences() {
   cifs-utils -y \
   smbclient -y \
   systemd-timesyncd \
-  bluez
+  bluez \
+  ifupdown
+#  network-manager \
 #  systemd-resolved -y
 }
 
