@@ -104,7 +104,8 @@ install_dependences() {
   systemd-journal-remote -y \
   cifs-utils -y \
   smbclient -y \
-  systemd-timesyncd
+  systemd-timesyncd \
+  bluez
 #  systemd-resolved -y
 }
 
