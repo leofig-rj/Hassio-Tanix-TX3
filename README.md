@@ -70,6 +70,8 @@ Devemos copiar e colar este comando:
 
 ```curl -sL https://raw.githubusercontent.com/leofig-rj/Hassio-Tanix-TX3/master/script/hassio_tanix_tx3_2025_04.sh | bash -s ```
 
+Durante o upgrade do Kernel, é possível que a conexão caia. Neste caso, volte ao passo 19.
+
 Estando tudo OK, vai aparecer a tela abaixo. Devemos selecionar ```qemuarm-64``` (movimentar com a seta para baixo e dar enter).
 
 ![osagents](https://user-images.githubusercontent.com/43672635/212336624-b7161dfe-b0d1-4440-a8aa-589c95bd3abb.jpeg)
