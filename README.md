@@ -1,6 +1,6 @@
 # Instalação do Home Assistant Supervisedo na TV box Tanix TX3 rodando Armbian
 
-Este tutorial é baseado em [Instalacao_armbian_hassio_TX3][Instalacao_armbian_hassio_TX3] e foi escrito em 31/01/2024
+Este tutorial é baseado em [Instalacao_armbian_hassio_TX3][Instalacao_armbian_hassio_TX3] e foi escrito em 05/05/2025
 
 Apesar deste tutorial ter sido testado, podem ser encontradas adversidades que não foram simuladas devido à grande variedade de hardware existente e à alteração de software disponível.
 
