@@ -17,7 +17,7 @@ readonly HOSTNAME="homeassistant"
 readonly OS_VERSION_FROM="Armbian-unofficial 25.05.0-trunk bookworm"
 readonly OS_VERSION_TO="Debian GNU\/Linux 12 (bookworm)"
 readonly OS_AGENT="os-agent_1.7.2_linux_aarch64.deb"
-readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/download/1.7.2/"
+readonly OS_AGENT_PATH="https://github.com/home-assistant/os-agent/releases/tag/1.7.2/"
 readonly HA_INSTALLER="homeassistant-supervised.deb"
 readonly HA_INSTALLER_PATH="https://github.com/home-assistant/supervised-installer/releases/latest/download/"
 
