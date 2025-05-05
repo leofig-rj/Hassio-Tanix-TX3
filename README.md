@@ -10,17 +10,17 @@ Desse modo, não darei nenhum tipo de suporte a este tutorial, ficando o mesmo a
 
 2 – Depois fazendo download do ArmBian de https://github.com/ophub/amlogic-s9xxx-armbian/releases
 
-Eu usei uma versão de Armbian_bullseye_xxxxxx por ser baseada em debian e estar atualizada com a última versão.
-A imagem que usei foi Armbian_24.2.0_amlogic_s905x3_bullseye_6.6.13_server_2024.01.25.img.gz, mas caso não esteja mais disponível ou se não funcionar para você, teste versões Armbian_24.2.0_amlogic_s905x3_bullseye_xxxxxxxxx.img.gz.
-O importante é que comecem com Armbian_24.2.0_amlogic_s905x3_bullseye.
+Eu usei uma versão de Armbian_25.05.0_amlogic_s905x3_bookworm_xxxxxx por ser baseada em debian e estar atualizada com a última versão.
+A imagem que usei foi Armbian_25.05.0_amlogic_s905x3_bookworm_6.12.23_server_2025.04.15.img.gz, mas caso não esteja mais disponível ou se não funcionar para você, teste versões Armbian_25.05.0_amlogic_s905x3_bookworm_xxxxxxxxx.img.gz.
+O importante é que comecem com Armbian_xx.xx.x_amlogic_s905x3_bookworm.
 
-3 – Com um PENDRIVE formatado (é bom formatar com https://www.sdcard.org/downloads/formatter/) vamos gravar a imagem do Armbian com o BalenaEtcher no PENDRIVE.
+3 – Com um MicroSD formatado vamos gravar a imagem do Armbian com o BalenaEtcher no MicroSD.
 
-4 – Quando concluído, devemos ejetar o PENDRIVE, reinstalar no computador e abrir uEnv.txt que esta na raiz do PENDRIVE. Devemos substituir o dtb que lá está por um referente a sua TX3 (meson-sm1-tx3-bz.dtb ou meson-sm1-tx3-qz.dtb).
+4 – Quando concluído, devemos ejetar o MicroSD, reinstalar no computador e abrir uEnv.txt que esta na raiz do MicroSD. Devemos substituir o dtb que lá está por um referente a sua TX3 (meson-sm1-tx3-bz.dtb ou meson-sm1-tx3-qz.dtb).
 
 ![uenv](https://user-images.githubusercontent.com/43672635/212434955-3c84c7e5-49ce-41e8-b596-eefc1b564e4a.png)
 
-5 – Ejetar o PENDRIVE do computador e colocar na porta UBS 3.0 na lateral esquerda da TANIX.
+5 – Ejetar o MicroSD do computador e colocar na porta de MicroSD na lateral direita da TANIX.
 
 6 – Ligar o cabo HDMI e cabo de Rede na TANIX. Atenção que a TANIX ainda deve estar desligada da eletricidade.
 
@@ -61,14 +61,14 @@ Quando entrar vai ser solicitado para criar uma nova senha para o usuário root 
 
 17 - Finalmente após alguma espera (nunca interrompa o processo) vamos ter uma msg no final. Então digite ```poweroff``` para finalizar a seção do armbian e desligar a TV box.
 
-18 - Agora devemos desligar a energia, retirar o PENDRIVE e voltar a ligar a energia.
+18 - Agora devemos desligar a energia, retirar o MicroSD e voltar a ligar a energia.
 
 19 - Vamos acessar novamente o armbian com o usuário root e a nova senha definida para o root (como em 9, agora com a nova senha).
 E executar um comando para fazer as atualizações e ajustes do armbian, bem como a instalação do Home Assistant supervisor (possivelmente o armbian será reinializado, necessitanto fazer um novo acesso e repetir o comando).
 
 Devemos copiar e colar este comando:
 
-```curl -sL https://raw.githubusercontent.com/leofig-rj/Hassio-Tanix-TX3/master/script/hassio_tanix_tx3_2024_01.sh | bash -s ```
+```curl -sL https://raw.githubusercontent.com/leofig-rj/Hassio-Tanix-TX3/master/script/hassio_tanix_tx3_2025_04.sh | bash -s ```
 
 Estando tudo OK, vai aparecer a tela abaixo. Devemos selecionar ```qemuarm-64``` (movimentar com a seta para baixo e dar enter).
 
@@ -77,16 +77,6 @@ Estando tudo OK, vai aparecer a tela abaixo. Devemos selecionar ```qemuarm-64```
 20 - Será instalado o home assistant com o supervisor. E se tudo correr bem, vamos receber a informação de conclusão.
 
 21 - Vamos no nosso browser, acessar http://ip_da_box:8123 e aguardar a instalação. Quando aparecer a tela para criar novo login ou restaurar backup, devemos fazer um reboot para que as alterações seja aplicadas, comandando ```sudo reboot``` na linha de comando.
-
-Se quisermos usar o bluetooth ou o wifi da box temos que acessar novamente o armbian como usuário root e dar o comando ```sudo armbian-config``` que vai abrir uma caixa de opções.
-
-![network](https://user-images.githubusercontent.com/43672635/212344741-788c48c3-e7e4-4fce-b1b4-25d86ddac8f3.png)
-
-Escolhemos a opção ```network``` e depois vamos escolher a opção ```bt install``` e aguardar a instalação.
-
-![bt install](https://user-images.githubusercontent.com/43672635/212345004-a5651ad2-c35e-4fa4-81f5-170757be65f1.png)
-
-Depois de concluído a instalação basta ir ao Home Assistant e fazer a integração do bluetooth.
 
 Boas instalações!
 
