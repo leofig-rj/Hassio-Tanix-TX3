@@ -95,6 +95,7 @@ install_dependences() {
   jq \
   wget \
   curl \
+  network-manager \
   udisks2 -y \
   libglib2.0-bin \
   dbus \
@@ -105,9 +106,7 @@ install_dependences() {
   smbclient -y \
   systemd-timesyncd \
   bluez \
-  ifupdown
-#  network-manager \
-#  systemd-resolved -y
+  systemd-resolved -y
 }
 
 # ------------------------------------------------------------------------------
