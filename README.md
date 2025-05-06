@@ -78,7 +78,7 @@ Estando tudo OK, vai aparecer a tela abaixo. Devemos selecionar ```qemuarm-64```
 
 20 - Será instalado o home assistant com o supervisor. E se tudo correr bem, vamos receber a informação de conclusão.
 
-21 - Vamos no nosso browser, acessar http://ip_da_box:8123 e aguardar a instalação. Quando aparecer a tela para criar novo login ou restaurar backup, devemos fazer um reboot para que as alterações seja aplicadas, comandando ```sudo reboot``` na linha de comando.
+21 - Vamos no nosso browser, acessar http://ip_da_box:8123 e aguardar a instalação. Quando aparecer a tela para criar minha casa inteligente ou restaurar backup, devemos fazer um reboot para que as alterações seja aplicadas, comandando ```sudo reboot``` na linha de comando.
 
 Boas instalações!
 
